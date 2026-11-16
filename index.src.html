@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Skiwoche Januar 2027</title>
+<meta name="description" content="Sieben Ski-Unterkünfte für drei Paare und zwei Kleinkinder im Januar 2027 im direkten Vergleich.">
+<meta name="theme-color" content="#f7f8fb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar" id="bar">
+  <div class="container bar__in">
+    <a class="mark" href="./" aria-label="Skiwoche 2027">Skiwoche 27</a>
+    <div class="seg seg--lang" role="group" aria-label="Sprache" data-i18n-aria="langLabel">
+      <button type="button" data-lang="de" aria-pressed="true">DE</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="ro" aria-pressed="false">RO</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="intro container">
+    <div class="intro__text">
+      <h1 data-i18n="h1">Sieben Unterkünfte. Eine Skiwoche.</h1>
+      <p class="lead" data-i18n="lead">Drei Paare, zwei Kleinkinder, Januar 2027. Tippt eine Zeile für Details.</p>
+    </div>
+    <dl class="board" id="board"><!--board--></dl>
+  </section>
+
+  <section class="tools container" aria-label="Filter">
+    <div class="tools__group">
+      <span class="tools__label" id="lbl-sort" data-i18n="sort">Sortieren</span>
+      <div class="seg" role="group" aria-labelledby="lbl-sort" id="sort"><!--sort--></div>
+    </div>
+    <div class="tools__group">
+      <span class="tools__label" id="lbl-region" data-i18n="region">Region</span>
+      <div class="seg" role="group" aria-labelledby="lbl-region" id="region"><!--region--></div>
+    </div>
+    <div class="tools__group tools__group--toggles">
+      <label class="switch"><input type="checkbox" id="withPass"><span class="switch__box" aria-hidden="true"></span><span data-i18n="withPass">Pro Paar inkl. 2 Skipässe</span></label>
+      <label class="switch"><input type="checkbox" id="refundable"><span class="switch__box" aria-hidden="true"></span><span data-i18n="refundable">Nur stornierbar</span></label>
+    </div>
+  </section>
+
+  <section class="ledger container" aria-labelledby="ledger-h">
+    <h2 class="visually-hidden" id="ledger-h" data-i18n="ledgerTitle">Vergleich</h2>
+    <div class="scroller" tabindex="0" role="region" aria-labelledby="ledger-h">
+      <table class="table">
+        <thead><tr id="thead"><!--thead--></tr></thead>
+        <tbody id="rows"><!--rows--></tbody>
+      </table>
+    </div>
+    <div class="empty" id="empty" hidden>
+      <p data-i18n="empty">Keine Unterkunft passt zu diesen Filtern.</p>
+      <button type="button" class="btn btn--secondary" id="reset" data-i18n="reset">Filter zurücksetzen</button>
+    </div>
+    <p class="fine" id="passNote" data-i18n="passNote">Pro Paar = Unterkunft geteilt durch drei. Mit Skipass: plus zwei 6-Tage-Pässe für Erwachsene zum höchsten bekannten Preis; online und früh gekauft meist günstiger. Kleinkinder fahren überall gratis oder fast gratis.</p>
+  </section>
+
+  <section class="facts container" aria-labelledby="facts-h">
+    <h2 id="facts-h" data-i18n="factsTitle">Gut zu wissen</h2>
+    <dl class="facts__list" id="facts"><!--facts--></dl>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container foot__in">
+    <p data-i18n="stand">Stand 16.11.2026. Preise für 6 Erwachsene und 2 Kinder, ganze Unterkunft; sie können sich täglich ändern.</p>
+    <details class="sources">
+      <summary data-i18n="sources">Quellen</summary>
+      <ul>
+        <li><a href="https://bergbahnen.soelden.com/local/Bergbahnen%20S%C3%B6lden/Preise/WINTER_26-27_Preise_B2C20-_DE-EN.pdf">Bergbahnen Sölden, Preise 2026/27</a></li>
+        <li><a href="https://www.gurgl.com/en/activities/winter/skiing-snowboarding/ski-passes-prices">Gurgl, Ötztal Superskipass</a></li>
+        <li><a href="https://www.soelden.com/skibus-parking">Sölden, Skibus und Gästekarte</a></li>
+        <li><a href="https://ischgl.com/en/winter/ski-bus">Ischgl, Skibus Paznaun</a></li>
+        <li><a href="https://service.ischgl.com/en/winter/operating-times-prices/skipass-prices-silvretta">Silvretta Skipass</a></li>
+        <li><a href="https://www.bahn.de/faq/skigebiet-paznaun-ischgl">Paznaun, 366 Pistenkilometer</a></li>
+        <li><a href="https://www.tirol.at/reisefuehrer/sport/skifahren/skigebiete/a-skigebiet-kappl">Skigebiet Kappl</a></li>
+        <li><a href="https://www.tirol.at/orte/a-soelden/skifahren">Skigebiet Sölden</a></li>
+        <li><a href="https://en.chamonix.com/la-carte-d-hote">Chamonix, Gästekarte</a></li>
+        <li><a href="https://www.alti-mag.com/stations/les-houches">Les Houches, Pisten</a></li>
+        <li><a href="https://www.booking.com">Booking.com</a>, <a href="https://www.trivago.de">trivago</a></li>
+        <li><a href="https://project-osrm.org">OSRM</a> (Fahrzeiten ohne Verkehr)</li>
+      </ul>
+    </details>
+  </div>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet__panel" id="sheetPanel">
+    <div class="sheet__grip" id="sheetGrip"><span class="sheet__handle" aria-hidden="true"></span></div>
+    <div class="sheet__head">
+      <div>
+        <h2 id="sheet-title"></h2>
+        <p class="sheet__place" id="sheet-place"></p>
+      </div>
+      <button type="button" class="btn btn--secondary btn--small" id="sheetClose" data-i18n="close">Schließen</button>
+    </div>
+    <div class="sheet__body" id="sheetBody"></div>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
