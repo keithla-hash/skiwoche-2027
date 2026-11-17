@@ -15,7 +15,8 @@
     region: pick(q.get("region"), REGIONS, "all"),
     withPass: q.get("pass") === "1",
     refundable: q.get("refundable") === "1",
-    open: stays.some(s => s.id === q.get("stay")) ? q.get("stay") : null
+    open: stays.some(s => s.id === q.get("stay")) ? q.get("stay") : null,
+    groupOn: false, user: null, ratingList: [], ratings: null
   };
 
   function syncUrl() {
@@ -62,8 +63,38 @@
     document.querySelector(".scroller").hidden = none;
   }
 
+  // ---- group ratings (group.js emits "ski:group")
+  function aggregate() {
+    if (!st.user) { st.ratings = null; return; }
+    const m = {};
+    for (const x of st.ratingList) {
+      const g = m[x.stay] || (m[x.stay] = { sum: 0, n: 0, mine: false });
+      g.sum += x.stars; g.n++; if (x.uid === st.user.uid) g.mine = true;
+    }
+    for (const k in m) m[k].avg = m[k].sum / m[k].n;
+    st.ratings = m;
+  }
+  function renderGroup() {
+    const t = STR[st.lang].g, btn = $("authBtn"), gb = $("groupbar");
+    btn.hidden = !st.groupOn;
+    btn.textContent = st.user ? t.signOut : t.signIn;
+    btn.dataset.act = st.user ? "signout" : "signin";
+    gb.hidden = !st.groupOn;
+    if (st.user) {
+      const a = stays.filter(s => st.ratings && st.ratings[s.id] && st.ratings[s.id].mine).length;
+      gb.textContent = SKI.fmt(a === stays.length ? t.done : t.progress, { n: st.user.name, a, b: stays.length });
+    } else gb.textContent = t.invite;
+  }
+  window.addEventListener("ski:group", e => {
+    const d = e.detail;
+    st.groupOn = d.on; st.user = d.user; st.ratingList = d.list || [];
+    aggregate(); renderGroup(); renderRows();
+    const typing = document.activeElement && document.activeElement.closest && document.activeElement.closest(".grp__form");
+    if (st.open && sheet.open && !typing) fillSheet(st.open);
+  });
+
   function renderAll() {
-    renderStatic(); renderControls(); renderRows();
+    renderStatic(); renderControls(); renderRows(); renderGroup();
     if (st.open && $("sheet").open) fillSheet(st.open);
     syncUrl();
   }
@@ -75,10 +106,25 @@
     if (b && b.dataset.sort) { st.sort = b.dataset.sort; renderControls(); renderRows(); syncUrl(); return; }
     if (b && b.dataset.region) { st.region = b.dataset.region; renderControls(); renderRows(); syncUrl(); return; }
     if (b && b.id === "reset") { st.region = "all"; st.refundable = false; renderControls(); renderRows(); syncUrl(); return; }
+    if (b && b.dataset.act === "signin") { window.SKIG.signIn().catch(() => alert(STR[st.lang].g.err)); return; }
+    if (b && b.dataset.act === "signout") { window.SKIG.signOut(); return; }
+    if (b && b.dataset.act === "unrate") { window.SKIG.remove(b.dataset.stay).catch(() => alert(STR[st.lang].g.err)); return; }
+    if (e.target.closest(".grp")) return;
     const opener = e.target.closest("[data-open]");
     if (opener) { openSheet(opener.dataset.open, opener); return; }
     const tr = e.target.closest("tbody tr");
     if (tr && !e.target.closest("a")) openSheet(tr.dataset.id, tr.querySelector("[data-open]"));
+  });
+  document.addEventListener("submit", async e => {
+    const f = e.target.closest(".grp__form"); if (!f) return;
+    e.preventDefault();
+    const t = STR[st.lang].g, msg = f.querySelector(".grp__msg"), btn = f.querySelector('button[type="submit"]');
+    const stars = Number((f.querySelector('input[name="stars"]:checked') || {}).value || 0);
+    if (!stars) { msg.textContent = t.mine + ": ★"; return; }
+    btn.disabled = true;
+    try { await window.SKIG.save(f.dataset.stay, stars, f.elements.comment.value.trim()); msg.textContent = t.saved; document.activeElement.blur(); }
+    catch (err) { msg.textContent = t.err; }
+    finally { btn.disabled = false; }
   });
   $("withPass").addEventListener("change", e => { st.withPass = e.target.checked; renderRows(); syncUrl(); });
   $("refundable").addEventListener("change", e => { st.refundable = e.target.checked; renderRows(); syncUrl(); });
@@ -148,7 +194,7 @@
   function project(vel, rate = 0.998) { return (vel / 1000) * rate / (1 - rate); }
   panel.addEventListener("pointerdown", e => {
     const onGrip = grip.contains(e.target);
-    if (!onGrip && (body.scrollTop > 0 || e.pointerType === "mouse" || e.target.closest("a, button, summary"))) return;
+    if (!onGrip && (body.scrollTop > 0 || e.pointerType === "mouse" || e.target.closest("a, button, summary, input, textarea, label"))) return;
     cancelAnimationFrame(raf);
     drag = { id: e.pointerId, start: e.clientY, from: y, hist: [{ t: performance.now(), y: e.clientY }], live: onGrip };
   });

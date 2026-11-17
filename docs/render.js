@@ -3,20 +3,20 @@
   const STR = {
     de: {
       title: "Skiwoche Januar 2027",
-      desc: "Zehn Ski-Unterkünfte für drei Paare und zwei Kleinkinder im Januar 2027 im direkten Vergleich.",
+      desc: "Elf Ski-Unterkünfte für drei Paare und zwei Kleinkinder im Januar 2027 im direkten Vergleich.",
       langLabel: "Sprache",
-      h1: "Zehn Unterkünfte. Eine Skiwoche.",
+      h1: "Elf Unterkünfte. Eine Skiwoche.",
       lead: "Drei Paare, zwei Kleinkinder, Januar 2027. Tippt eine Zeile für Details.",
       figCouple: "günstigster Preis pro Paar",
       figKm: "Pistenkilometer mit einem Pass",
       figDrive: "kürzeste Anfahrt ab Fulda",
       sort: "Sortieren", region: "Region",
-      sortBy: { couple: "Preis pro Paar", km: "Pisten", drive: "Anfahrt", rating: "Bewertung" },
+      sortBy: { couple: "Preis pro Paar", km: "Pisten", drive: "Anfahrt", rating: "Bewertung", group: "Gruppe" },
       regions: { all: "Alle", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc" },
       withPass: "Pro Paar inkl. 2 Skipässe",
       refundable: "Nur stornierbar",
       ledgerTitle: "Vergleich",
-      th: { name: "Unterkunft", dates: "Zeitraum", total: "Gesamt", couple: "Pro Paar", night: "Pro Nacht", beds: "Betten", bus: "Skibus", areas: "Gebiete in 20 Min.", km: "Pisten-km", drive: "Anfahrt", rating: "Bewertung", cancel: "Storno" },
+      th: { name: "Unterkunft", group: "Gruppe", dates: "Zeitraum", total: "Gesamt", couple: "Pro Paar", night: "Pro Nacht", beds: "Betten", bus: "Skibus", areas: "Gebiete in 20 Min.", km: "Pisten-km", drive: "Anfahrt", rating: "Bewertung", cancel: "Storno" },
       bedFit: { yes: "Doppelbett je Paar", partly: "Nicht für jedes Paar", singles: "Nur Einzelbetten", open: "Noch offen" },
       bus: { yes: "Ja, gratis", partly: "Zug gratis", open: "Nicht geprüft" },
       cancel: { no: "Nein", yes: "Kostenlos", option: "Mit Aufpreis", talk: "Absprechen", open: "Nicht geprüft" },
@@ -37,7 +37,7 @@
         ["Privatwohnung", "Gastgeberin vorab fragen: Bettart in den 3 Zimmern, ob die Kinder kostenlos sind, Anzahlung und Storno, und ob sie euch für die Ötztaler Gästekarte anmeldet. Die Karte macht den Skibus gratis."],
         ["Skibus", "Ötztal: gratis mit Gästekarte. Paznaun: gratis mit Skipass und Ausrüstung. Chamonix-Tal: Zug Mont-Blanc Express mit Gästekarte gratis, Busse nur ermäßigt."],
         ["Skipässe 6 Tage", "Ötztal Superskipass 469 € (Kasse, ab 7.1.), gilt in 6 Gebieten mit rund 365 km. Silvretta Skipass ca. 451 € für rund 366 km. Chamonix Le Pass 265 bis 373 € für 98 km, Mont-Blanc Unlimited 350 bis 499 € für 711 km."],
-        ["Storno", "Auf Booking nicht stornierbar: Sabine, Conny-1, Aillouds. Kostenlos stornierbar: A little corner of paradise (bis 9.12.). Bei den Airbnb-Angeboten die Storno-Regel vor dem Buchen prüfen. Airbnb-Bewertungen (von 5) sind auf die 10er-Skala umgerechnet."],
+        ["Storno", "Auf Booking nicht stornierbar: Sabine, Aillouds. Mit Storno gegen Aufpreis: A little corner of paradise (Booking, 2.040 € bis 9.12.). Bei den Airbnb-Angeboten die Storno-Regel vor dem Buchen prüfen. Airbnb-Bewertungen (von 5) sind auf die 10er-Skala umgerechnet."],
         ["Vignette", "Österreich ab 2027 nur digital, 10 Tage ca. 13 €. Für Mont Blanc über die Schweiz zusätzlich 40 CHF Jahresvignette."]
       ],
       stand: "Stand 17.11.2026. Preise für 6 Erwachsene und 2 Kinder, ganze Unterkunft; sie können sich täglich ändern.",
@@ -51,24 +51,25 @@
       noRating: "Keine",
       driveFmt: (km, h, m) => `${km} km, ca. ${h}:${String(m).padStart(2, "0")} Std.`,
       to: " bis ",
-      locale: "de-DE"
+      locale: "de-DE",
+      g: {"th": "Gruppe", "sort": "Gruppe", "signIn": "Mit Google anmelden", "signOut": "Abmelden", "title": "Eure Bewertungen", "lead": "Jede Person bewertet jede Unterkunft mit 1 bis 5 Sternen, gern mit kurzem Kommentar. Alle sehen alle Bewertungen.", "hint": "Melde dich mit Google an, um zu bewerten und die Bewertungen der anderen zu sehen.", "mine": "Deine Bewertung", "comment": "Kommentar (optional)", "save": "Speichern", "saved": "Gespeichert", "remove": "Bewertung löschen", "none": "Noch keine Bewertungen.", "off": "Bewertungen sind noch nicht freigeschaltet.", "missing": "Du fehlst noch", "votes": "Stimmen", "vote": "Stimme", "progress": "Angemeldet als {n}. Du hast {a} von {b} Unterkünften bewertet.", "done": "Angemeldet als {n}. Du hast alle {b} Unterkünfte bewertet, danke!", "invite": "Bitte bewertet jede Unterkunft: mit Google anmelden, Zeile öffnen, Sterne vergeben.", "err": "Das hat nicht geklappt. Bitte nochmal versuchen.", "starsLbl": "{n} von 5 Sternen", "you": "du"}
     },
     en: {
       title: "Ski week January 2027",
-      desc: "Ten ski stays for three couples and two toddlers in January 2027, compared side by side.",
+      desc: "Eleven ski stays for three couples and two toddlers in January 2027, compared side by side.",
       langLabel: "Language",
-      h1: "Ten places. One ski week.",
+      h1: "Eleven places. One ski week.",
       lead: "Three couples, two toddlers, January 2027. Tap a row for details.",
       figCouple: "lowest price per couple",
       figKm: "slope kilometres on one pass",
       figDrive: "shortest drive from Fulda",
       sort: "Sort", region: "Region",
-      sortBy: { couple: "Price per couple", km: "Slopes", drive: "Drive", rating: "Rating" },
+      sortBy: { couple: "Price per couple", km: "Slopes", drive: "Drive", rating: "Rating", group: "Group" },
       regions: { all: "All", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc" },
       withPass: "Per couple incl. 2 ski passes",
       refundable: "Refundable only",
       ledgerTitle: "Comparison",
-      th: { name: "Stay", dates: "Dates", total: "Total", couple: "Per couple", night: "Per night", beds: "Beds", bus: "Ski bus", areas: "Areas within 20 min", km: "Slope km", drive: "Drive", rating: "Rating", cancel: "Cancellation" },
+      th: { name: "Stay", group: "Group", dates: "Dates", total: "Total", couple: "Per couple", night: "Per night", beds: "Beds", bus: "Ski bus", areas: "Areas within 20 min", km: "Slope km", drive: "Drive", rating: "Rating", cancel: "Cancellation" },
       bedFit: { yes: "Double bed per couple", partly: "Not for every couple", singles: "Single beds only", open: "Still open" },
       bus: { yes: "Yes, free", partly: "Train free", open: "Not checked" },
       cancel: { no: "No", yes: "Free", option: "At extra cost", talk: "To agree", open: "Not checked" },
@@ -89,7 +90,7 @@
         ["Private flat", "Ask the host first: bed type in the 3 rooms, whether the kids stay free, deposit and cancellation, and whether she registers you for the Ötztal guest card. The card makes the ski bus free."],
         ["Ski bus", "Ötztal: free with the guest card. Paznaun: free with ski pass and gear. Chamonix valley: Mont-Blanc Express train free with the guest card, buses only discounted."],
         ["6-day ski passes", "Ötztal Superskipass €469 (desk price from 7 Jan), valid in 6 areas with about 365 km. Silvretta Skipass about €451 for about 366 km. Chamonix Le Pass €265 to 373 for 98 km, Mont-Blanc Unlimited €350 to 499 for 711 km."],
-        ["Cancellation", "Non-refundable on Booking: Sabine, Conny-1, Aillouds. Free cancellation: A little corner of paradise (until 9 Dec). Check the cancellation rule of the Airbnb offers before booking. Airbnb ratings (out of 5) are converted to the 10-point scale."],
+        ["Cancellation", "Non-refundable on Booking: Sabine, Aillouds. Cancellable at extra cost: A little corner of paradise (Booking, €2,040 until 9 Dec). Check the cancellation rule of the Airbnb offers before booking. Airbnb ratings (out of 5) are converted to the 10-point scale."],
         ["Vignette", "Austria is digital-only from 2027, 10 days about €13. For Mont Blanc via Switzerland add the CHF 40 annual vignette."]
       ],
       stand: "As of 17 Nov 2026. Prices for 6 adults and 2 kids, whole property; they can change daily.",
@@ -103,24 +104,25 @@
       noRating: "None",
       driveFmt: (km, h, m) => `${km} km, about ${h}:${String(m).padStart(2, "0")} h`,
       to: " to ",
-      locale: "en-GB"
+      locale: "en-GB",
+      g: {"th": "Group", "sort": "Group", "signIn": "Sign in with Google", "signOut": "Sign out", "title": "Your ratings", "lead": "Everyone rates every place with 1 to 5 stars, ideally with a short comment. Everyone sees all ratings.", "hint": "Sign in with Google to rate and to see everyone else’s ratings.", "mine": "Your rating", "comment": "Comment (optional)", "save": "Save", "saved": "Saved", "remove": "Delete rating", "none": "No ratings yet.", "off": "Ratings are not switched on yet.", "missing": "You haven’t rated", "votes": "votes", "vote": "vote", "progress": "Signed in as {n}. You have rated {a} of {b} places.", "done": "Signed in as {n}. You have rated all {b} places, thank you!", "invite": "Please rate every place: sign in with Google, open a row, give stars.", "err": "That did not work. Please try again.", "starsLbl": "{n} of 5 stars", "you": "you"}
     },
     ro: {
       title: "Săptămâna de schi, ianuarie 2027",
-      desc: "Zece cazări la schi pentru trei cupluri și doi copii mici în ianuarie 2027, comparate direct.",
+      desc: "Unsprezece cazări la schi pentru trei cupluri și doi copii mici în ianuarie 2027, comparate direct.",
       langLabel: "Limba",
-      h1: "Zece cazări. O săptămână de schi.",
+      h1: "Unsprezece cazări. O săptămână de schi.",
       lead: "Trei cupluri, doi copii mici, ianuarie 2027. Atingeți un rând pentru detalii.",
       figCouple: "cel mai mic preț pe cuplu",
       figKm: "kilometri de pârtie cu un abonament",
       figDrive: "cel mai scurt drum din Fulda",
       sort: "Sortare", region: "Regiune",
-      sortBy: { couple: "Preț pe cuplu", km: "Pârtii", drive: "Drum", rating: "Notă" },
+      sortBy: { couple: "Preț pe cuplu", km: "Pârtii", drive: "Drum", rating: "Notă", group: "Grup" },
       regions: { all: "Toate", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc" },
       withPass: "Pe cuplu cu 2 skipass-uri",
       refundable: "Doar cu anulare",
       ledgerTitle: "Comparație",
-      th: { name: "Cazare", dates: "Perioadă", total: "Total", couple: "Pe cuplu", night: "Pe noapte", beds: "Paturi", bus: "Skibus", areas: "Domenii în 20 min", km: "Km pârtie", drive: "Drum", rating: "Notă", cancel: "Anulare" },
+      th: { name: "Cazare", group: "Grup", dates: "Perioadă", total: "Total", couple: "Pe cuplu", night: "Pe noapte", beds: "Paturi", bus: "Skibus", areas: "Domenii în 20 min", km: "Km pârtie", drive: "Drum", rating: "Notă", cancel: "Anulare" },
       bedFit: { yes: "Pat dublu pentru fiecare cuplu", partly: "Nu pentru toate cuplurile", singles: "Doar paturi single", open: "Încă neclar" },
       bus: { yes: "Da, gratuit", partly: "Tren gratuit", open: "Neverificat" },
       cancel: { no: "Nu", yes: "Gratuită", option: "Cu cost extra", talk: "De stabilit", open: "Neverificat" },
@@ -141,7 +143,7 @@
         ["Apartamentul privat", "Întrebați gazda înainte: ce paturi sunt în cele 3 camere, dacă copiii stau gratuit, avansul și anularea, și dacă vă înregistrează pentru cardul de oaspete Ötztal. Cu cardul, skibusul e gratuit."],
         ["Skibus", "Ötztal: gratuit cu cardul de oaspete. Paznaun: gratuit cu skipass și echipament. Valea Chamonix: trenul Mont-Blanc Express gratuit cu cardul de oaspete, autobuzele doar reduse."],
         ["Skipass 6 zile", "Ötztal Superskipass 469 € (la casă, de la 7 ian.), valabil în 6 domenii cu cca. 365 km. Silvretta Skipass cca. 451 € pentru cca. 366 km. Chamonix Le Pass 265-373 € pentru 98 km, Mont-Blanc Unlimited 350-499 € pentru 711 km."],
-        ["Anulare", "Fără anulare pe Booking: Sabine, Conny-1, Aillouds. Anulare gratuită: A little corner of paradise (până pe 9.12.). La ofertele Airbnb verificați regula de anulare înainte de rezervare. Notele Airbnb (din 5) sunt convertite la scara de 10."],
+        ["Anulare", "Fără anulare pe Booking: Sabine, Aillouds. Anulare contra cost: A little corner of paradise (Booking, 2.040 € până pe 9.12.). La ofertele Airbnb verificați regula de anulare înainte de rezervare. Notele Airbnb (din 5) sunt convertite la scara de 10."],
         ["Vinietă", "Austria are din 2027 doar vinietă digitală, 10 zile cca. 13 €. Pentru Mont Blanc prin Elveția se adaugă vinieta anuală de 40 CHF."]
       ],
       stand: "Situația la 17.11.2026. Prețuri pentru 6 adulți și 2 copii, toată cazarea; se pot schimba zilnic.",
@@ -155,7 +157,8 @@
       noRating: "Fără",
       driveFmt: (km, h, m) => `${km} km, cca. ${h}:${String(m).padStart(2, "0")} h`,
       to: " până la ",
-      locale: "ro-RO"
+      locale: "ro-RO",
+      g: {"th": "Grup", "sort": "Grup", "signIn": "Conectare cu Google", "signOut": "Deconectare", "title": "Notele voastre", "lead": "Fiecare persoană notează fiecare cazare cu 1 până la 5 stele, ideal cu un scurt comentariu. Toți văd toate notele.", "hint": "Conectează-te cu Google ca să notezi și să vezi notele celorlalți.", "mine": "Nota ta", "comment": "Comentariu (opțional)", "save": "Salvează", "saved": "Salvat", "remove": "Șterge nota", "none": "Încă nicio notă.", "off": "Notele nu sunt încă activate.", "missing": "Nu ai notat încă", "votes": "voturi", "vote": "vot", "progress": "Conectat ca {n}. Ai notat {a} din {b} cazări.", "done": "Conectat ca {n}. Ai notat toate cele {b} cazări, mulțumim!", "invite": "Vă rugăm notați fiecare cazare: conectare cu Google, deschideți un rând, dați stele.", "err": "Nu a mers. Încearcă din nou.", "starsLbl": "{n} din 5 stele", "you": "tu"}
     }
   };
 
@@ -171,7 +174,7 @@
   };
   const shortDrive = (s, lang) => { const [h, m] = hm(s.driveMin); return `${h}:${String(m).padStart(2, "0")} h`; };
 
-  const SORTS = ["couple", "km", "drive", "rating"];
+  const SORTS = ["couple", "group", "km", "drive", "rating"];
   const REGIONS = ["all", "oetztal", "paznaun", "montblanc"];
 
   function view(stays, st) {
@@ -180,7 +183,8 @@
       couple: s => perCouple(s, st.withPass),
       km: s => -s.kmPass,
       drive: s => s.driveMin,
-      rating: s => -(s.rating || 0)
+      rating: s => -(s.rating || 0),
+      group: s => { const g = st.ratings && st.ratings[s.id]; return g && g.n ? -g.avg : 1; }
     }[st.sort];
     return list.slice().sort((a, b) => key(a) - key(b));
   }
@@ -200,7 +204,7 @@
     return items.map(k => `<button type="button" data-${attr}="${k}" aria-pressed="${k === current}">${esc(labels[k])}</button>`).join("");
   }
 
-  const COLS = ["name", "couple", "total", "night", "dates", "beds", "bus", "areas", "km", "drive", "rating", "cancel"];
+  const COLS = ["name", "couple", "group", "total", "night", "dates", "beds", "bus", "areas", "km", "drive", "rating", "cancel"];
 
   function thead(lang) {
     const t = STR[lang];
@@ -215,6 +219,7 @@
       const cells = {
         name: `<th scope="row" class="c-name"><button type="button" class="rowbtn" data-open="${s.id}"><span class="rowbtn__name">${esc(s.name)}</span><span class="rowbtn__place">${esc(s.place[lang])}</span></button><span class="tag tag--${s.source}">${esc(t.source[s.source])}</span></th>`,
         couple: `<td class="c-couple num" data-label="${esc(t.th.couple)}"><span class="price">${esc(eur(pc, lang))}</span><span class="sub">${esc(st.withPass ? t.inclPass : t.onlyStay)}</span></td>`,
+        group: groupCell(s, t, st),
         total: `<td class="c-total num" data-label="${esc(t.th.total)}">${esc(eur(s.total, lang))}</td>`,
         night: `<td class="c-night num" data-label="${esc(t.th.night)}">${esc(eur(s.total / s.nights, lang))}</td>`,
         dates: `<td class="c-dates" data-label="${esc(t.th.dates)}">${esc(dates(s, lang))}<span class="sub">${esc(t.nights(s.nights))}</span></td>`,
@@ -228,6 +233,33 @@
       };
       return `<tr data-id="${s.id}">${COLS.map(c => cells[c]).join("")}</tr>`;
     }).join("");
+  }
+
+
+  const fmt = (s, o) => s.replace(/\{(\w+)\}/g, (m, k) => o[k]);
+  function groupCell(s, t, st) {
+    const g = st.ratings && st.ratings[s.id];
+    let inner;
+    if (!g || !g.n) inner = `<span class="muted">${esc(t.noRating)}</span>`;
+    else inner = `<span class="gscore">${num(g.avg, t.locale.slice(0, 2))}<span class="gstar" aria-hidden="true">★</span></span><span class="sub">${g.n} ${esc(g.n === 1 ? t.g.vote : t.g.votes)}</span>`;
+    if (st.user && !(g && g.mine)) inner += `<span class="sub gmiss">${esc(t.g.missing)}</span>`;
+    return `<td class="c-group num" data-label="${esc(t.th.group)}">${inner}</td>`;
+  }
+
+  function groupBlock(s, lang, st) {
+    const t = STR[lang], g = t.g;
+    const head = `<section class="grp" aria-labelledby="grp-h"><h3 id="grp-h">${esc(g.title)}</h3><p class="grp__lead">${esc(g.lead)}</p>`;
+    if (!st.groupOn) return head + `<p class="muted">${esc(g.off)}</p></section>`;
+    if (!st.user) return head + `<p>${esc(g.hint)}</p><button type="button" class="btn btn--primary" data-act="signin">${esc(g.signIn)}</button></section>`;
+    const list = (st.ratingList || []).filter(x => x.stay === s.id).sort((a, b) => b.stars - a.stars);
+    const mine = list.find(x => x.uid === st.user.uid);
+    const val = mine ? mine.stars : 0;
+    const stars = [1, 2, 3, 4, 5].map(n => `<label class="star"><input type="radio" name="stars" value="${n}"${n === val ? " checked" : ""}><span aria-hidden="true">★</span><span class="visually-hidden">${esc(fmt(g.starsLbl, { n }))}</span></label>`).join("");
+    const form = `<form class="grp__form" data-stay="${s.id}"><fieldset class="stars"><legend>${esc(g.mine)}</legend>${stars}</fieldset>`
+      + `<label class="grp__c"><span>${esc(g.comment)}</span><textarea name="comment" rows="2" maxlength="400">${esc(mine ? mine.comment : "")}</textarea></label>`
+      + `<div class="grp__actions"><button type="submit" class="btn btn--primary btn--small">${esc(g.save)}</button>${mine ? `<button type="button" class="btn btn--secondary btn--small" data-act="unrate" data-stay="${s.id}">${esc(g.remove)}</button>` : ""}<span class="grp__msg" role="status"></span></div></form>`;
+    const others = list.length ? `<ul class="grp__list">${list.map(x => `<li><span class="grp__who">${esc(x.name)}${x.uid === st.user.uid ? ` (${esc(g.you)})` : ""}</span><span class="grp__stars" aria-label="${esc(fmt(g.starsLbl, { n: x.stars }))}">${"★".repeat(x.stars)}<span class="grp__off">${"★".repeat(5 - x.stars)}</span></span>${x.comment ? `<span class="grp__txt">${esc(x.comment)}</span>` : ""}</li>`).join("")}</ul>` : `<p class="muted">${esc(g.none)}</p>`;
+    return head + form + others + `</section>`;
   }
 
   function facts(lang) {
@@ -250,6 +282,7 @@
         <div><span class="fig fig--s">${esc(eur(perCouple(s, true), lang))}</span><span class="sub">${esc(d.couple)}, ${esc(t.inclPass)}</span></div>
         <div><span class="fig fig--s">${esc(intn(s.kmPass, lang))}</span><span class="sub">${esc(d.km)} (${esc(s.passName)})</span></div>
       </div>
+      ${groupBlock(s, lang, st)}
       <div class="sheet__cols">
         <div>
           <h3>${esc(t.plus)}</h3>${list(s.pros[lang])}
@@ -279,5 +312,5 @@
       <div class="sheet__action">${action}</div>`;
   }
 
-  root.SKI = { STR, SORTS, REGIONS, board, seg, thead, rows, facts, sheet, view };
+  root.SKI = { STR, SORTS, REGIONS, board, seg, thead, rows, facts, sheet, view, fmt };
 })(typeof window !== "undefined" ? window : globalThis);
