@@ -99,7 +99,7 @@ thead .c-name { z-index: var(--z-raised); }
 
 .fit, .cx { font-weight: 600; }
 .fit--yes, .cx--yes { color: var(--color-ok); }
-.fit--partly, .fit--open, .cx--option, .cx--talk { color: var(--color-warn); }
+.fit--partly, .fit--open, .cx--option, .cx--talk, .cx--open { color: var(--color-warn); }
 .fit--singles, .cx--no { color: var(--color-bad); }
 
 .empty { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); padding: var(--space-xl) 0; border-top: var(--rule-bar) solid var(--color-ink); font-weight: 500; }
