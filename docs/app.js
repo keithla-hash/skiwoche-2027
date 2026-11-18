@@ -16,7 +16,7 @@
     withPass: q.get("pass") === "1",
     refundable: q.get("refundable") === "1",
     open: stays.some(s => s.id === q.get("stay")) ? q.get("stay") : null,
-    groupOn: false, user: null, ratingList: [], ratings: null
+    groupOn: false, user: null, ratingList: [], ratings: null, favs: {}
   };
 
   function syncUrl() {
@@ -88,13 +88,22 @@
   window.addEventListener("ski:group", e => {
     const d = e.detail;
     st.groupOn = d.on; st.user = d.user; st.ratingList = d.list || [];
-    aggregate(); renderGroup(); renderRows();
+    const fm = {};
+    for (const x of d.favs || []) (fm[x.stay] = fm[x.stay] || []).push(x.group);
+    st.favs = fm;
+    aggregate(); renderGroup(); renderRows(); renderFavs();
     const typing = document.activeElement && document.activeElement.closest && document.activeElement.closest(".grp__form");
     if (st.open && sheet.open && !typing) fillSheet(st.open);
   });
 
+  function renderFavs() {
+    const el = $("favbar");
+    el.hidden = !st.groupOn;
+    if (st.groupOn) el.innerHTML = SKI.favbar(stays, st.lang, st);
+  }
+
   function renderAll() {
-    renderStatic(); renderControls(); renderRows(); renderGroup();
+    renderStatic(); renderControls(); renderRows(); renderGroup(); renderFavs();
     if (st.open && $("sheet").open) fillSheet(st.open);
     syncUrl();
   }
@@ -108,6 +117,13 @@
     if (b && b.id === "reset") { st.region = "all"; st.refundable = false; renderControls(); renderRows(); syncUrl(); return; }
     if (b && b.dataset.act === "signin") { window.SKIG.signIn().catch(() => alert(STR[st.lang].g.err)); return; }
     if (b && b.dataset.act === "signout") { window.SKIG.signOut(); return; }
+    if (b && b.dataset.act === "fav") {
+      if (!st.user) { window.SKIG.signIn().catch(() => alert(STR[st.lang].g.err)); return; }
+      const on = b.getAttribute("aria-pressed") !== "true";
+      b.setAttribute("aria-pressed", String(on));
+      window.SKIG.fav(b.dataset.stay, b.dataset.grp, on).catch(() => { b.setAttribute("aria-pressed", String(!on)); alert(STR[st.lang].f.err); });
+      return;
+    }
     if (b && b.dataset.act === "unrate") { window.SKIG.remove(b.dataset.stay).catch(() => alert(STR[st.lang].g.err)); return; }
     if (e.target.closest(".grp")) return;
     const opener = e.target.closest("[data-open]");

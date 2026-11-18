@@ -10,3 +10,7 @@ Statische Vergleichs-App (DE/EN/RO) für Ski-Unterkünfte, gehostet über GitHub
 - `docs/group.js` lädt Firebase 13.1.0 von gstatic, nur wenn `docs/firebase-config.js` eine Konfiguration exportiert; sonst zeigt die App "noch nicht freigeschaltet".
 - Firestore `ratings/<unterkunft>_<uid>`: angemeldete Personen lesen alles, schreiben nur ihre eigene Bewertung (1 bis 5 Sterne, Kommentar bis 400 Zeichen). Regeln und Einrichtung liegen im gitignorten Ordner `firebase/` (privates Google-Konto, Spark, eur3).
 - Einrichten: `cd firebase && node setup.mjs` (Testlauf), dann `node setup.mjs --commit`; das schreibt `docs/firebase-config.js` (öffentliche Web-Konfiguration, kein Geheimnis).
+
+## Favoriten (drei Paare)
+- Gruppen fest in `docs/render.js` (`GROUPS`: kh, da, if). Firestore `favs/<unterkunft>_<gruppe>`: alle lesen (Schnittmenge öffentlich), angemeldete Personen setzen und entfernen.
+- Regeln: `firebase/firestore.rules`, veröffentlichen mit `cd firebase && ./node_modules/.bin/firebase deploy --only firestore:rules --project skiwoche27-4f61fa --non-interactive`.

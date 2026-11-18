@@ -4,10 +4,10 @@ import { firebaseConfig } from "./firebase-config.js";
 
 const V = "13.1.0";
 const B = `https://www.gstatic.com/firebasejs/${V}/`;
-const state = { on: false, user: null, list: [] };
+const state = { on: false, user: null, list: [], favs: [] };
 const emit = () => window.dispatchEvent(new CustomEvent("ski:group", { detail: { ...state } }));
 
-window.SKIG = { on: false, signIn() {}, signOut() {}, save: async () => {}, remove: async () => {} };
+window.SKIG = { on: false, signIn() {}, signOut() {}, save: async () => {}, remove: async () => {}, fav: async () => {} };
 
 if (!firebaseConfig) {
   emit();
@@ -44,9 +44,21 @@ if (!firebaseConfig) {
       async remove(stay) {
         const u = auth.currentUser; if (!u) return;
         await F.deleteDoc(F.doc(db, "ratings", `${stay}_${u.uid}`));
+      },
+      // favourites per couple: favs/<stay>_<group>, readable by everyone, writable when signed in
+      async fav(stay, group, on) {
+        const u = auth.currentUser; if (!u) throw new Error("not signed in");
+        const ref = F.doc(db, "favs", `${stay}_${group}`);
+        if (on) await F.setDoc(ref, { stay, group, uid: u.uid, ts: F.serverTimestamp() });
+        else await F.deleteDoc(ref);
       }
     };
     state.on = true;
+
+    F.onSnapshot(F.collection(db, "favs"), snap => {
+      state.favs = snap.docs.map(d => d.data()).map(x => ({ stay: x.stay, group: x.group }));
+      emit();
+    }, () => {});
 
     A.getRedirectResult(auth).catch(() => {});
     A.onAuthStateChanged(auth, u => {

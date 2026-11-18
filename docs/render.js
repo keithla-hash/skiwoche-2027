@@ -3,20 +3,20 @@
   const STR = {
     de: {
       title: "Skiwoche Januar 2027",
-      desc: "Acht Ski-Unterkünfte für drei Paare und zwei Kleinkinder im Januar 2027 im direkten Vergleich.",
+      desc: "Elf Ski-Unterkünfte für drei Paare und zwei Kleinkinder im Januar 2027 im direkten Vergleich.",
       langLabel: "Sprache",
-      h1: "Acht Unterkünfte. Eine Skiwoche.",
+      h1: "Elf Unterkünfte. Eine Skiwoche.",
       lead: "Drei Paare, zwei Kleinkinder, Januar 2027. Tippt eine Zeile für Details.",
       figCouple: "günstigster Preis pro Paar",
       figKm: "Pistenkilometer mit einem Pass",
       figDrive: "kürzeste Anfahrt ab Fulda",
       sort: "Sortieren", region: "Region",
-      sortBy: { couple: "Preis pro Paar", km: "Pisten", drive: "Anfahrt", rating: "Bewertung", group: "Gruppe", family: "Familie" },
-      regions: { all: "Alle", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc" },
+      sortBy: { couple: "Preis pro Paar", km: "Pisten", drive: "Anfahrt", rating: "Bewertung", group: "Gruppe", family: "Familie", fav: "Favoriten" },
+      regions: { all: "Alle", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc", garmisch: "Garmisch" },
       withPass: "Pro Paar inkl. 2 Skipässe",
       refundable: "Nur stornierbar",
       ledgerTitle: "Vergleich",
-      th: { name: "Unterkunft", group: "Gruppe", ski: "Ski", spa: "Therme", nature: "Natur", dates: "Zeitraum", total: "Gesamt", couple: "Pro Paar", night: "Pro Nacht", beds: "Betten", bus: "Skibus", areas: "Gebiete in 20 Min.", km: "Pisten-km", drive: "Anfahrt", rating: "Bewertung", cancel: "Storno" },
+      th: { name: "Unterkunft", fav: "Favoriten", group: "Gruppe", ski: "Ski", spa: "Therme", nature: "Natur", dates: "Zeitraum", total: "Gesamt", couple: "Pro Paar", night: "Pro Nacht", beds: "Betten", bus: "Skibus", areas: "Gebiete in 20 Min.", km: "Pisten-km", drive: "Anfahrt", rating: "Bewertung", cancel: "Storno" },
       bedFit: { yes: "Doppelbett je Paar", partly: "Nicht für jedes Paar", singles: "Nur Einzelbetten", open: "Noch offen" },
       bus: { yes: "Ja, gratis", partly: "Zug gratis", open: "Nicht geprüft" },
       cancel: { no: "Nein", yes: "Kostenlos", option: "Mit Aufpreis", talk: "Absprechen", open: "Nicht geprüft" },
@@ -33,13 +33,14 @@
       passNote: "Pro Paar = Unterkunft geteilt durch drei. Mit Skipass: plus zwei 6-Tage-Pässe für Erwachsene zum höchsten bekannten Preis; online und früh gekauft meist günstiger. Kleinkinder fahren überall gratis oder fast gratis.",
       factsTitle: "Gut zu wissen",
       facts: [
-        ["Verfügbarkeit", "Am 18.11. geprüft: Grand Cerf, Penthouse Längenfeld und Apart Deluxe Zwieselstein sind ausgebucht und deshalb raus. Im Ötztal bleibt nur die Privatwohnung in Huben."],
+        ["Favoriten", "Jedes Paar markiert seine Favoriten, in der Tabelle oder im Detailblatt. Oben steht, wo sich die Favoriten überschneiden. Markieren geht nach der Google-Anmeldung, sehen können es alle."],
+        ["Verfügbarkeit", "Am 18.11. geprüft: Grand Cerf, Penthouse Längenfeld und Apart Deluxe Zwieselstein sind ausgebucht und deshalb raus. Im Ötztal bleibt nur die Privatwohnung in Huben. In Garmisch ist Anfang Januar fast alles belegt: von gut 40 passenden Häusern sind nur 3 für 7 Nächte frei."],
         ["Sterne Ski, Therme, Natur", "Eigene Einschätzung aus den recherchierten Fakten. Ski: Pistenkilometer, Höhe und Weg zum Lift. Therme: Fahrzeit und ob Kleinkinder rein dürfen. Natur: was Eltern mit Kleinkind ohne Ski machen können. 5 = sehr gut, 1 = sehr schlecht."],
-        ["Auswahl", "Pflicht: 3 echte Schlafzimmer mit Doppelbett (Wohnzimmer zählt nicht), mindestens 2 Bäder, höchstens 20 Min. zum Lift in Ötztal, Paznaun oder Chamonix-Tal. Gesucht wurde jede Anreise vom 2. bis 9.1. mit 7 oder 8 Nächten; gezeigt ist der günstigste Zeitraum. Ausnahme: die Privatwohnung gibt es nur vom 4. bis 10.1. (6 Nächte)."],
+        ["Auswahl", "Pflicht: 3 echte Schlafzimmer mit Doppelbett (Wohnzimmer zählt nicht), mindestens 2 Bäder, höchstens 20 Min. zum Lift in Ötztal, Paznaun, Chamonix-Tal oder rund um Garmisch-Partenkirchen. Gesucht wurde jede Anreise vom 2. bis 9.1. mit 7 oder 8 Nächten; gezeigt ist der günstigste Zeitraum. Ausnahme: die Privatwohnung gibt es nur vom 4. bis 10.1. (6 Nächte)."],
         ["Privatwohnung", "Gastgeberin vorab fragen: Bettart in den 3 Zimmern, ob die Kinder kostenlos sind, Anzahlung und Storno, und ob sie euch für die Ötztaler Gästekarte anmeldet. Die Karte macht den Skibus gratis."],
-        ["Skibus", "Ötztal: gratis mit Gästekarte. Paznaun: gratis mit Skipass und Ausrüstung. Chamonix-Tal: Zug Mont-Blanc Express mit Gästekarte gratis, Busse nur ermäßigt."],
-        ["Skipässe 6 Tage", "Ötztal Superskipass 469 € (Kasse, ab 7.1.), gilt in 6 Gebieten mit rund 365 km. Silvretta Skipass ca. 451 € für rund 366 km. Chamonix Le Pass 265 bis 373 € für 98 km, Mont-Blanc Unlimited 350 bis 499 € für 711 km."],
-        ["Storno", "Auf Booking nicht stornierbar: Sabine, Aillouds. Mit Storno gegen Aufpreis: A little corner of paradise (Booking, 2.040 € bis 9.12.). Bei den Airbnb-Angeboten die Storno-Regel vor dem Buchen prüfen. Airbnb-Bewertungen (von 5) sind auf die 10er-Skala umgerechnet."],
+        ["Skibus", "Ötztal: gratis mit Gästekarte. Paznaun: gratis mit Skipass und Ausrüstung. Chamonix-Tal: Zug Mont-Blanc Express mit Gästekarte gratis, Busse nur ermäßigt. Garmisch: Ortsbusse seit 1.1.2026 mit Gästekarte gratis, in Grainau ein Skibus zum Hausberg."],
+        ["Skipässe 6 Tage", "Ötztal Superskipass 469 € (Kasse, ab 7.1.), gilt in 6 Gebieten mit rund 365 km. Silvretta Skipass ca. 451 € für rund 366 km. Chamonix Le Pass 265 bis 373 € für 98 km, Mont-Blanc Unlimited 350 bis 499 € für 711 km. Garmisch: Top Snow Card 378 € für rund 213 km (Zugspitze, Garmisch-Classic, Mittenwald, Tiroler Zugspitz Arena); Garmisch-Classic und Zugspitze allein haben rund 60 km."],
+        ["Storno", "Auf Booking nicht stornierbar: Sabine, Aillouds. Mit Storno gegen Aufpreis: A little corner of paradise (Booking, 2.040 € bis 9.12.). Nicht stornierbar in Garmisch: WeitsichtLodge (Booking) und das Haus in Grainau; die Berghütte ist bis 10.12. kostenlos stornierbar. Bei den Airbnb-Angeboten die Storno-Regel vor dem Buchen prüfen. Airbnb-Bewertungen (von 5) sind auf die 10er-Skala umgerechnet."],
         ["Vignette", "Österreich ab 2027 nur digital, 10 Tage ca. 13 €. Für Mont Blanc über die Schweiz zusätzlich 40 CHF Jahresvignette."]
       ],
       stand: "Stand 18.11.2026. Preise für 6 Erwachsene und 2 Kinder, ganze Unterkunft; sie können sich täglich ändern.",
@@ -55,24 +56,25 @@
       to: " bis ",
       locale: "de-DE",
       fam: {"ski": "Ski", "spa": "Therme", "nature": "Natur", "family": "Familie", "dayTitle": "Tag ohne Ski", "skiTxt": "Ski", "spaTxt": "Therme in der Nähe", "natTxt": "Ohne Ski mit Kleinkind", "ofFive": "{n} von 5"},
-      g: {"th": "Gruppe", "sort": "Gruppe", "signIn": "Mit Google anmelden", "signOut": "Abmelden", "title": "Eure Bewertungen", "lead": "Jede Person bewertet jede Unterkunft mit 1 bis 5 Sternen, gern mit kurzem Kommentar. Alle sehen alle Bewertungen.", "hint": "Melde dich mit Google an, um zu bewerten und die Bewertungen der anderen zu sehen.", "mine": "Deine Bewertung", "comment": "Kommentar (optional)", "save": "Speichern", "saved": "Gespeichert", "remove": "Bewertung löschen", "none": "Noch keine Bewertungen.", "off": "Bewertungen sind noch nicht freigeschaltet.", "missing": "Du fehlst noch", "votes": "Stimmen", "vote": "Stimme", "progress": "Angemeldet als {n}. Du hast {a} von {b} Unterkünften bewertet.", "done": "Angemeldet als {n}. Du hast alle {b} Unterkünfte bewertet, danke!", "invite": "Bitte bewertet jede Unterkunft: mit Google anmelden, Zeile öffnen, Sterne vergeben.", "err": "Das hat nicht geklappt. Bitte nochmal versuchen.", "starsLbl": "{n} von 5 Sternen", "you": "du"}
+      g: {"th": "Gruppe", "sort": "Gruppe", "signIn": "Mit Google anmelden", "signOut": "Abmelden", "title": "Eure Bewertungen", "lead": "Jede Person bewertet jede Unterkunft mit 1 bis 5 Sternen, gern mit kurzem Kommentar. Alle sehen alle Bewertungen.", "hint": "Melde dich mit Google an, um zu bewerten und die Bewertungen der anderen zu sehen.", "mine": "Deine Bewertung", "comment": "Kommentar (optional)", "save": "Speichern", "saved": "Gespeichert", "remove": "Bewertung löschen", "none": "Noch keine Bewertungen.", "off": "Bewertungen sind noch nicht freigeschaltet.", "missing": "Du fehlst noch", "votes": "Stimmen", "vote": "Stimme", "progress": "Angemeldet als {n}. Du hast {a} von {b} Unterkünften bewertet.", "done": "Angemeldet als {n}. Du hast alle {b} Unterkünfte bewertet, danke!", "invite": "Bitte bewertet jede Unterkunft: mit Google anmelden, Zeile öffnen, Sterne vergeben.", "err": "Das hat nicht geklappt. Bitte nochmal versuchen.", "starsLbl": "{n} von 5 Sternen", "you": "du"},
+      f: {"title": "Eure Favoriten", "lead": "Jedes Paar markiert, was ihm gefällt. Wo alle drei markiert haben, liegt eure Schnittmenge.", "all3": "Alle drei Paare", "two": "Zwei Paare", "one": "Ein Paar", "none": "Noch keine Favoriten markiert.", "hint": "Zum Markieren mit Google anmelden. Sehen können es alle.", "of3": "{n} von 3", "on": "{g} hat das als Favorit markiert. Tippen zum Entfernen.", "off": "Als Favorit von {g} markieren", "sheetTitle": "Favorit von", "err": "Speichern hat nicht geklappt."}
     },
     en: {
       title: "Ski week January 2027",
-      desc: "Eight ski stays for three couples and two toddlers in January 2027, compared side by side.",
+      desc: "Eleven ski stays for three couples and two toddlers in January 2027, compared side by side.",
       langLabel: "Language",
-      h1: "Eight places. One ski week.",
+      h1: "Eleven places. One ski week.",
       lead: "Three couples, two toddlers, January 2027. Tap a row for details.",
       figCouple: "lowest price per couple",
       figKm: "slope kilometres on one pass",
       figDrive: "shortest drive from Fulda",
       sort: "Sort", region: "Region",
-      sortBy: { couple: "Price per couple", km: "Slopes", drive: "Drive", rating: "Rating", group: "Group", family: "Family" },
-      regions: { all: "All", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc" },
+      sortBy: { couple: "Price per couple", km: "Slopes", drive: "Drive", rating: "Rating", group: "Group", family: "Family", fav: "Favourites" },
+      regions: { all: "All", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc", garmisch: "Garmisch" },
       withPass: "Per couple incl. 2 ski passes",
       refundable: "Refundable only",
       ledgerTitle: "Comparison",
-      th: { name: "Stay", group: "Group", ski: "Ski", spa: "Spa", nature: "Nature", dates: "Dates", total: "Total", couple: "Per couple", night: "Per night", beds: "Beds", bus: "Ski bus", areas: "Areas within 20 min", km: "Slope km", drive: "Drive", rating: "Rating", cancel: "Cancellation" },
+      th: { name: "Stay", fav: "Favourites", group: "Group", ski: "Ski", spa: "Spa", nature: "Nature", dates: "Dates", total: "Total", couple: "Per couple", night: "Per night", beds: "Beds", bus: "Ski bus", areas: "Areas within 20 min", km: "Slope km", drive: "Drive", rating: "Rating", cancel: "Cancellation" },
       bedFit: { yes: "Double bed per couple", partly: "Not for every couple", singles: "Single beds only", open: "Still open" },
       bus: { yes: "Yes, free", partly: "Train free", open: "Not checked" },
       cancel: { no: "No", yes: "Free", option: "At extra cost", talk: "To agree", open: "Not checked" },
@@ -89,13 +91,14 @@
       passNote: "Per couple = the stay divided by three. With ski passes: plus two 6-day adult passes at the highest known price; usually cheaper online and early. Toddlers ski free or almost free everywhere.",
       factsTitle: "Good to know",
       facts: [
-        ["Availability", "Checked on 18 Nov: Grand Cerf, Penthouse Längenfeld and Apart Deluxe Zwieselstein are booked out and therefore removed. In the Ötztal only the private flat in Huben is left."],
+        ["Favourites", "Each couple marks its favourites, in the table or in the detail sheet. The top of the page shows where the favourites overlap. Marking needs a Google sign-in; everyone can see the result."],
+        ["Availability", "Checked on 18 Nov: Grand Cerf, Penthouse Längenfeld and Apart Deluxe Zwieselstein are booked out and therefore removed. In the Ötztal only the private flat in Huben is left. Garmisch is almost full in early January: of about 40 matching houses only 3 are free for 7 nights."],
         ["Stars for ski, spa, nature", "My own rating from the facts I researched. Ski: slope kilometres, altitude and the way to the lift. Spa: drive time and whether toddlers are allowed in. Nature: what parents with a toddler can do without skiing. 5 = very good, 1 = very poor."],
-        ["Shortlist", "Musts: 3 real bedrooms with a double bed (the living room does not count), at least 2 bathrooms, at most 20 min to a lift in the Ötztal, Paznaun or Chamonix valley. Every arrival from 2 to 9 Jan with 7 or 8 nights was searched; the cheapest dates are shown. Exception: the private flat is only free from 4 to 10 Jan (6 nights)."],
+        ["Shortlist", "Musts: 3 real bedrooms with a double bed (the living room does not count), at least 2 bathrooms, at most 20 min to a lift in the Ötztal, Paznaun, Chamonix valley or around Garmisch-Partenkirchen. Every arrival from 2 to 9 Jan with 7 or 8 nights was searched; the cheapest dates are shown. Exception: the private flat is only free from 4 to 10 Jan (6 nights)."],
         ["Private flat", "Ask the host first: bed type in the 3 rooms, whether the kids stay free, deposit and cancellation, and whether she registers you for the Ötztal guest card. The card makes the ski bus free."],
-        ["Ski bus", "Ötztal: free with the guest card. Paznaun: free with ski pass and gear. Chamonix valley: Mont-Blanc Express train free with the guest card, buses only discounted."],
-        ["6-day ski passes", "Ötztal Superskipass €469 (desk price from 7 Jan), valid in 6 areas with about 365 km. Silvretta Skipass about €451 for about 366 km. Chamonix Le Pass €265 to 373 for 98 km, Mont-Blanc Unlimited €350 to 499 for 711 km."],
-        ["Cancellation", "Non-refundable on Booking: Sabine, Aillouds. Cancellable at extra cost: A little corner of paradise (Booking, €2,040 until 9 Dec). Check the cancellation rule of the Airbnb offers before booking. Airbnb ratings (out of 5) are converted to the 10-point scale."],
+        ["Ski bus", "Ötztal: free with the guest card. Paznaun: free with ski pass and gear. Chamonix valley: Mont-Blanc Express train free with the guest card, buses only discounted. Garmisch: local buses free with the guest card since 1 Jan 2026, plus a ski bus to the Hausberg in Grainau."],
+        ["6-day ski passes", "Ötztal Superskipass €469 (desk price from 7 Jan), valid in 6 areas with about 365 km. Silvretta Skipass about €451 for about 366 km. Chamonix Le Pass €265 to 373 for 98 km, Mont-Blanc Unlimited €350 to 499 for 711 km. Garmisch: Top Snow Card €378 for about 213 km (Zugspitze, Garmisch-Classic, Mittenwald, Tyrolean Zugspitz Arena); Garmisch-Classic and the Zugspitze alone have about 60 km."],
+        ["Cancellation", "Non-refundable on Booking: Sabine, Aillouds. Cancellable at extra cost: A little corner of paradise (Booking, €2,040 until 9 Dec). Non-refundable in Garmisch: WeitsichtLodge (Booking) and the Grainau house; the Berghütte is free to cancel until 10 Dec. Check the cancellation rule of the Airbnb offers before booking. Airbnb ratings (out of 5) are converted to the 10-point scale."],
         ["Vignette", "Austria is digital-only from 2027, 10 days about €13. For Mont Blanc via Switzerland add the CHF 40 annual vignette."]
       ],
       stand: "As of 18 Nov 2026. Prices for 6 adults and 2 kids, whole property; they can change daily.",
@@ -111,24 +114,25 @@
       to: " to ",
       locale: "en-GB",
       fam: {"ski": "Ski", "spa": "Spa", "nature": "Nature", "family": "Family", "dayTitle": "Day without skiing", "skiTxt": "Skiing", "spaTxt": "Nearby thermal spa", "natTxt": "No-ski with a toddler", "ofFive": "{n} of 5"},
-      g: {"th": "Group", "sort": "Group", "signIn": "Sign in with Google", "signOut": "Sign out", "title": "Your ratings", "lead": "Everyone rates every place with 1 to 5 stars, ideally with a short comment. Everyone sees all ratings.", "hint": "Sign in with Google to rate and to see everyone else’s ratings.", "mine": "Your rating", "comment": "Comment (optional)", "save": "Save", "saved": "Saved", "remove": "Delete rating", "none": "No ratings yet.", "off": "Ratings are not switched on yet.", "missing": "You haven’t rated", "votes": "votes", "vote": "vote", "progress": "Signed in as {n}. You have rated {a} of {b} places.", "done": "Signed in as {n}. You have rated all {b} places, thank you!", "invite": "Please rate every place: sign in with Google, open a row, give stars.", "err": "That did not work. Please try again.", "starsLbl": "{n} of 5 stars", "you": "you"}
+      g: {"th": "Group", "sort": "Group", "signIn": "Sign in with Google", "signOut": "Sign out", "title": "Your ratings", "lead": "Everyone rates every place with 1 to 5 stars, ideally with a short comment. Everyone sees all ratings.", "hint": "Sign in with Google to rate and to see everyone else’s ratings.", "mine": "Your rating", "comment": "Comment (optional)", "save": "Save", "saved": "Saved", "remove": "Delete rating", "none": "No ratings yet.", "off": "Ratings are not switched on yet.", "missing": "You haven’t rated", "votes": "votes", "vote": "vote", "progress": "Signed in as {n}. You have rated {a} of {b} places.", "done": "Signed in as {n}. You have rated all {b} places, thank you!", "invite": "Please rate every place: sign in with Google, open a row, give stars.", "err": "That did not work. Please try again.", "starsLbl": "{n} of 5 stars", "you": "you"},
+      f: {"title": "Your favourites", "lead": "Each couple marks what it likes. Where all three have marked a place, that is your overlap.", "all3": "All three couples", "two": "Two couples", "one": "One couple", "none": "No favourites marked yet.", "hint": "Sign in with Google to mark. Everyone can see the result.", "of3": "{n} of 3", "on": "{g} marked this as a favourite. Tap to remove.", "off": "Mark as a favourite of {g}", "sheetTitle": "Favourite of", "err": "Saving did not work."}
     },
     ro: {
       title: "Săptămâna de schi, ianuarie 2027",
-      desc: "Opt cazări la schi pentru trei cupluri și doi copii mici în ianuarie 2027, comparate direct.",
+      desc: "Unsprezece cazări la schi pentru trei cupluri și doi copii mici în ianuarie 2027, comparate direct.",
       langLabel: "Limba",
-      h1: "Opt cazări. O săptămână de schi.",
+      h1: "Unsprezece cazări. O săptămână de schi.",
       lead: "Trei cupluri, doi copii mici, ianuarie 2027. Atingeți un rând pentru detalii.",
       figCouple: "cel mai mic preț pe cuplu",
       figKm: "kilometri de pârtie cu un abonament",
       figDrive: "cel mai scurt drum din Fulda",
       sort: "Sortare", region: "Regiune",
-      sortBy: { couple: "Preț pe cuplu", km: "Pârtii", drive: "Drum", rating: "Notă", group: "Grup", family: "Familie" },
-      regions: { all: "Toate", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc" },
+      sortBy: { couple: "Preț pe cuplu", km: "Pârtii", drive: "Drum", rating: "Notă", group: "Grup", family: "Familie", fav: "Favorite" },
+      regions: { all: "Toate", oetztal: "Ötztal", paznaun: "Paznaun", montblanc: "Mont Blanc", garmisch: "Garmisch" },
       withPass: "Pe cuplu cu 2 skipass-uri",
       refundable: "Doar cu anulare",
       ledgerTitle: "Comparație",
-      th: { name: "Cazare", group: "Grup", ski: "Schi", spa: "Terme", nature: "Natură", dates: "Perioadă", total: "Total", couple: "Pe cuplu", night: "Pe noapte", beds: "Paturi", bus: "Skibus", areas: "Domenii în 20 min", km: "Km pârtie", drive: "Drum", rating: "Notă", cancel: "Anulare" },
+      th: { name: "Cazare", fav: "Favorite", group: "Grup", ski: "Schi", spa: "Terme", nature: "Natură", dates: "Perioadă", total: "Total", couple: "Pe cuplu", night: "Pe noapte", beds: "Paturi", bus: "Skibus", areas: "Domenii în 20 min", km: "Km pârtie", drive: "Drum", rating: "Notă", cancel: "Anulare" },
       bedFit: { yes: "Pat dublu pentru fiecare cuplu", partly: "Nu pentru toate cuplurile", singles: "Doar paturi single", open: "Încă neclar" },
       bus: { yes: "Da, gratuit", partly: "Tren gratuit", open: "Neverificat" },
       cancel: { no: "Nu", yes: "Gratuită", option: "Cu cost extra", talk: "De stabilit", open: "Neverificat" },
@@ -145,13 +149,14 @@
       passNote: "Pe cuplu = cazarea împărțită la trei. Cu skipass: plus două abonamente de 6 zile pentru adulți, la cel mai mare preț cunoscut; de obicei mai ieftin online și din timp. Copiii mici schiază peste tot gratuit sau aproape gratuit.",
       factsTitle: "Bine de știut",
       facts: [
-        ["Disponibilitate", "Verificat pe 18.11.: Grand Cerf, Penthouse Längenfeld și Apart Deluxe Zwieselstein sunt ocupate și au fost scoase. În Ötztal rămâne doar apartamentul privat din Huben."],
+        ["Favorite", "Fiecare cuplu își marchează favoritele, în tabel sau în fișa de detalii. Sus pe pagină se vede unde se suprapun. Marcarea cere conectare cu Google; rezultatul îl vede oricine."],
+        ["Disponibilitate", "Verificat pe 18.11.: Grand Cerf, Penthouse Längenfeld și Apart Deluxe Zwieselstein sunt ocupate și au fost scoase. În Ötztal rămâne doar apartamentul privat din Huben. Garmisch e aproape plin la început de ianuarie: din cca. 40 de case potrivite doar 3 sunt libere 7 nopți."],
         ["Stele schi, terme, natură", "Evaluarea mea pe baza faptelor cercetate. Schi: kilometri de pârtie, altitudine și drumul până la lift. Terme: timpul de condus și dacă au voie copiii mici. Natură: ce pot face părinții cu un copil mic fără schi. 5 = foarte bine, 1 = foarte slab."],
-        ["Selecție", "Obligatoriu: 3 dormitoare reale cu pat dublu (livingul nu contează), minimum 2 băi, maximum 20 min până la un lift în Ötztal, Paznaun sau valea Chamonix. Am căutat fiecare sosire între 2 și 9 ian. cu 7 sau 8 nopți; se arată perioada cea mai ieftină. Excepție: apartamentul privat e liber doar 4-10 ian. (6 nopți)."],
+        ["Selecție", "Obligatoriu: 3 dormitoare reale cu pat dublu (livingul nu contează), minimum 2 băi, maximum 20 min până la un lift în Ötztal, Paznaun, valea Chamonix sau în jurul Garmisch-Partenkirchen. Am căutat fiecare sosire între 2 și 9 ian. cu 7 sau 8 nopți; se arată perioada cea mai ieftină. Excepție: apartamentul privat e liber doar 4-10 ian. (6 nopți)."],
         ["Apartamentul privat", "Întrebați gazda înainte: ce paturi sunt în cele 3 camere, dacă copiii stau gratuit, avansul și anularea, și dacă vă înregistrează pentru cardul de oaspete Ötztal. Cu cardul, skibusul e gratuit."],
-        ["Skibus", "Ötztal: gratuit cu cardul de oaspete. Paznaun: gratuit cu skipass și echipament. Valea Chamonix: trenul Mont-Blanc Express gratuit cu cardul de oaspete, autobuzele doar reduse."],
-        ["Skipass 6 zile", "Ötztal Superskipass 469 € (la casă, de la 7 ian.), valabil în 6 domenii cu cca. 365 km. Silvretta Skipass cca. 451 € pentru cca. 366 km. Chamonix Le Pass 265-373 € pentru 98 km, Mont-Blanc Unlimited 350-499 € pentru 711 km."],
-        ["Anulare", "Fără anulare pe Booking: Sabine, Aillouds. Anulare contra cost: A little corner of paradise (Booking, 2.040 € până pe 9.12.). La ofertele Airbnb verificați regula de anulare înainte de rezervare. Notele Airbnb (din 5) sunt convertite la scara de 10."],
+        ["Skibus", "Ötztal: gratuit cu cardul de oaspete. Paznaun: gratuit cu skipass și echipament. Valea Chamonix: trenul Mont-Blanc Express gratuit cu cardul de oaspete, autobuzele doar reduse. Garmisch: autobuzele locale gratuite cu cardul de oaspete din 1.1.2026, iar în Grainau un skibus spre Hausberg."],
+        ["Skipass 6 zile", "Ötztal Superskipass 469 € (la casă, de la 7 ian.), valabil în 6 domenii cu cca. 365 km. Silvretta Skipass cca. 451 € pentru cca. 366 km. Chamonix Le Pass 265-373 € pentru 98 km, Mont-Blanc Unlimited 350-499 € pentru 711 km. Garmisch: Top Snow Card 378 € pentru cca. 213 km (Zugspitze, Garmisch-Classic, Mittenwald, Tiroler Zugspitz Arena); Garmisch-Classic și Zugspitze singure au cca. 60 km."],
+        ["Anulare", "Fără anulare pe Booking: Sabine, Aillouds. Anulare contra cost: A little corner of paradise (Booking, 2.040 € până pe 9.12.). Fără anulare în Garmisch: WeitsichtLodge (Booking) și casa din Grainau; Berghütte se poate anula gratuit până pe 10.12. La ofertele Airbnb verificați regula de anulare înainte de rezervare. Notele Airbnb (din 5) sunt convertite la scara de 10."],
         ["Vinietă", "Austria are din 2027 doar vinietă digitală, 10 zile cca. 13 €. Pentru Mont Blanc prin Elveția se adaugă vinieta anuală de 40 CHF."]
       ],
       stand: "Situația la 18.11.2026. Prețuri pentru 6 adulți și 2 copii, toată cazarea; se pot schimba zilnic.",
@@ -167,7 +172,8 @@
       to: " până la ",
       locale: "ro-RO",
       fam: {"ski": "Schi", "spa": "Terme", "nature": "Natură", "family": "Familie", "dayTitle": "Zi fără schi", "skiTxt": "Schi", "spaTxt": "Terme în apropiere", "natTxt": "Fără schi, cu un copil mic", "ofFive": "{n} din 5"},
-      g: {"th": "Grup", "sort": "Grup", "signIn": "Conectare cu Google", "signOut": "Deconectare", "title": "Notele voastre", "lead": "Fiecare persoană notează fiecare cazare cu 1 până la 5 stele, ideal cu un scurt comentariu. Toți văd toate notele.", "hint": "Conectează-te cu Google ca să notezi și să vezi notele celorlalți.", "mine": "Nota ta", "comment": "Comentariu (opțional)", "save": "Salvează", "saved": "Salvat", "remove": "Șterge nota", "none": "Încă nicio notă.", "off": "Notele nu sunt încă activate.", "missing": "Nu ai notat încă", "votes": "voturi", "vote": "vot", "progress": "Conectat ca {n}. Ai notat {a} din {b} cazări.", "done": "Conectat ca {n}. Ai notat toate cele {b} cazări, mulțumim!", "invite": "Vă rugăm notați fiecare cazare: conectare cu Google, deschideți un rând, dați stele.", "err": "Nu a mers. Încearcă din nou.", "starsLbl": "{n} din 5 stele", "you": "tu"}
+      g: {"th": "Grup", "sort": "Grup", "signIn": "Conectare cu Google", "signOut": "Deconectare", "title": "Notele voastre", "lead": "Fiecare persoană notează fiecare cazare cu 1 până la 5 stele, ideal cu un scurt comentariu. Toți văd toate notele.", "hint": "Conectează-te cu Google ca să notezi și să vezi notele celorlalți.", "mine": "Nota ta", "comment": "Comentariu (opțional)", "save": "Salvează", "saved": "Salvat", "remove": "Șterge nota", "none": "Încă nicio notă.", "off": "Notele nu sunt încă activate.", "missing": "Nu ai notat încă", "votes": "voturi", "vote": "vot", "progress": "Conectat ca {n}. Ai notat {a} din {b} cazări.", "done": "Conectat ca {n}. Ai notat toate cele {b} cazări, mulțumim!", "invite": "Vă rugăm notați fiecare cazare: conectare cu Google, deschideți un rând, dați stele.", "err": "Nu a mers. Încearcă din nou.", "starsLbl": "{n} din 5 stele", "you": "tu"},
+      f: {"title": "Favoritele voastre", "lead": "Fiecare cuplu marchează ce îi place. Unde au marcat toate trei, acolo vă suprapuneți.", "all3": "Toate trei cuplurile", "two": "Două cupluri", "one": "Un cuplu", "none": "Încă nu e marcat niciun favorit.", "hint": "Pentru a marca, conectează-te cu Google. Rezultatul îl vede oricine.", "of3": "{n} din 3", "on": "{g} a marcat asta ca favorit. Atinge pentru a elimina.", "off": "Marchează ca favorit pentru {g}", "sheetTitle": "Favorit pentru", "err": "Salvarea nu a mers."}
     }
   };
 
@@ -183,8 +189,15 @@
   };
   const shortDrive = (s, lang) => { const [h, m] = hm(s.driveMin); return `${h}:${String(m).padStart(2, "0")} h`; };
 
-  const SORTS = ["couple", "group", "family", "km", "drive", "rating"];
-  const REGIONS = ["all", "oetztal", "paznaun", "montblanc"];
+  const SORTS = ["couple", "fav", "group", "family", "km", "drive", "rating"];
+  const REGIONS = ["all", "oetztal", "paznaun", "montblanc", "garmisch"];
+  // the three couples; short is the chip in the table, name the full label
+  const GROUPS = [
+    { k: "kh", short: "K&H", name: { de: "Kevin & Hannah", en: "Kevin & Hannah", ro: "Kevin & Hannah" } },
+    { k: "da", short: "D&A", name: { de: "Dominic & Alexandra", en: "Dominic & Alexandra", ro: "Dominic & Alexandra" } },
+    { k: "if", short: "I&F", name: { de: "Iona & Familie", en: "Iona & family", ro: "Iona & familia" } }
+  ];
+  const favOf = (st, id) => (st.favs && st.favs[id]) || [];
 
   function view(stays, st) {
     let list = stays.filter(s => (st.region === "all" || s.region === st.region) && (!st.refundable || s.cancel === "yes" || s.cancel === "option"));
@@ -194,7 +207,8 @@
       drive: s => s.driveMin,
       rating: s => -(s.rating || 0),
       group: s => { const g = st.ratings && st.ratings[s.id]; return g && g.n ? -g.avg : 1; },
-      family: s => -(s.family.spa + s.family.nature) - s.family.ski / 10
+      family: s => -(s.family.spa + s.family.nature) - s.family.ski / 10,
+      fav: s => -favOf(st, s.id).length
     }[st.sort];
     return list.slice().sort((a, b) => key(a) - key(b));
   }
@@ -214,7 +228,7 @@
     return items.map(k => `<button type="button" data-${attr}="${k}" aria-pressed="${k === current}">${esc(labels[k])}</button>`).join("");
   }
 
-  const COLS = ["name", "couple", "group", "ski", "spa", "nature", "total", "night", "dates", "beds", "bus", "areas", "km", "drive", "rating", "cancel"];
+  const COLS = ["name", "fav", "couple", "group", "ski", "spa", "nature", "total", "night", "dates", "beds", "bus", "areas", "km", "drive", "rating", "cancel"];
 
   function thead(lang) {
     const t = STR[lang];
@@ -229,6 +243,7 @@
       const cells = {
         name: `<th scope="row" class="c-name"><button type="button" class="rowbtn" data-open="${s.id}"><span class="rowbtn__name">${esc(s.name)}</span><span class="rowbtn__place">${esc(s.place[lang])}</span></button><span class="tag tag--${s.source}">${esc(t.source[s.source])}</span></th>`,
         couple: `<td class="c-couple num" data-label="${esc(t.th.couple)}"><span class="price">${esc(eur(pc, lang))}</span><span class="sub">${esc(st.withPass ? t.inclPass : t.onlyStay)}</span></td>`,
+        fav: favCell(s, lang, st),
         group: groupCell(s, t, st),
         ski: `<td class="c-fam" data-label="${esc(t.th.ski)}">${rate(s.family.ski, t)}</td>`,
         spa: `<td class="c-fam" data-label="${esc(t.th.spa)}">${rate(s.family.spa, t)}</td>`,
@@ -267,6 +282,32 @@
     return `<td class="c-group num" data-label="${esc(t.th.group)}">${inner}</td>`;
   }
 
+  function favButtons(s, lang, st, full) {
+    const t = STR[lang].f, on = favOf(st, s.id);
+    return GROUPS.map(g => {
+      const p = on.includes(g.k), nm = g.name[lang];
+      return `<button type="button" class="favchip favchip--${g.k}${full ? " favchip--full" : ""}" data-act="fav" data-stay="${s.id}" data-grp="${g.k}" aria-pressed="${p}" ${full ? "" : `aria-label="${esc(fmt(p ? t.on : t.off, { g: nm }))}" title="${esc(nm)}"`}>${esc(full ? nm : g.short)}</button>`;
+    }).join("");
+  }
+  function favCell(s, lang, st) {
+    const t = STR[lang], n = favOf(st, s.id).length;
+    return `<td class="c-fav" data-label="${esc(t.th.fav)}"><span class="favs">${favButtons(s, lang, st, false)}</span><span class="sub">${esc(fmt(t.f.of3, { n }))}</span></td>`;
+  }
+  function favBlock(s, lang, st) {
+    const t = STR[lang].f;
+    return `<section class="favblock" aria-labelledby="fav-h"><h3 id="fav-h">${esc(t.sheetTitle)}</h3><div class="favs favs--full">${favButtons(s, lang, st, true)}</div>${st.user ? "" : `<p class="sub">${esc(t.hint)}</p>`}</section>`;
+  }
+  // overlap summary above the table: places marked by all three, then by two
+  function favbar(stays, lang, st) {
+    const t = STR[lang].f;
+    const by = n => stays.filter(s => favOf(st, s.id).length === n);
+    const line = (label, list) => list.length ? `<div class="favbar__row"><dt>${esc(label)}</dt><dd>${list.map(s => `<button type="button" class="favbar__stay" data-open="${s.id}">${esc(s.name)}</button>`).join("")}</dd></div>` : "";
+    const rows = line(t.all3, by(3)) + line(t.two, by(2)) + line(t.one, by(1));
+    return `<h2 class="favbar__h">${esc(t.title)}</h2><p class="favbar__lead">${esc(t.lead)}</p>`
+      + (rows ? `<dl class="favbar__list">${rows}</dl>` : `<p class="muted">${esc(t.none)}</p>`)
+      + (st.user ? "" : `<p class="sub">${esc(t.hint)}</p>`);
+  }
+
   function groupBlock(s, lang, st) {
     const t = STR[lang], g = t.g;
     const head = `<section class="grp" aria-labelledby="grp-h"><h3 id="grp-h">${esc(g.title)}</h3><p class="grp__lead">${esc(g.lead)}</p>`;
@@ -303,6 +344,7 @@
         <div><span class="fig fig--s">${esc(eur(perCouple(s, true), lang))}</span><span class="sub">${esc(d.couple)}, ${esc(t.inclPass)}</span></div>
         <div><span class="fig fig--s">${esc(intn(s.kmPass, lang))}</span><span class="sub">${esc(d.km)} (${esc(s.passName)})</span></div>
       </div>
+      ${favBlock(s, lang, st)}
       ${groupBlock(s, lang, st)}
       ${dayBlock(s, lang)}
       <div class="sheet__cols">
@@ -334,5 +376,5 @@
       <div class="sheet__action">${action}</div>`;
   }
 
-  root.SKI = { STR, SORTS, REGIONS, board, seg, thead, rows, facts, sheet, view, fmt };
+  root.SKI = { STR, SORTS, REGIONS, GROUPS, board, seg, thead, rows, facts, sheet, view, fmt, favbar };
 })(typeof window !== "undefined" ? window : globalThis);
